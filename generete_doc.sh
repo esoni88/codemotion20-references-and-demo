@@ -1,0 +1,1 @@
+redoc-cli bundle contract/book-store.yaml --options.theme.colors.primary.main=black
