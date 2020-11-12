@@ -7,9 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { ApiModule, BASE_PATH, Configuration } from 'src/backend-connector';
 import { RestClientService } from './rest-client.service';
+import { LoginComponent } from './login/login.component';
+import { BooksComponent } from './books/books.component';
+import { HeaderComponent } from './ui/header/header.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    BooksComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
