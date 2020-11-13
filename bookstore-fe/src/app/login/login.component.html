@@ -1,1 +1,25 @@
-login works!
+<div class="main-container p-d-flex p-jc-center p-ai-center">
+    <div class="p-d-flex p-flex-column p-jc-center">
+        <div>
+            <p-card header="Login" [style]="{'width': '25rem'}">
+                <div class="p-fluid">
+                    <div class="p-field">
+                        <label for="username">Username</label>
+                        <input [(ngModel)]="username" id="username" type="text" pInputText>
+                    </div>
+                    <div class="p-field">
+                        <label for="password">Password</label>
+                        <input [(ngModel)]="password" type="password" id="password" [feedback]="false" pPassword>
+                    </div>
+                </div>
+                <div class="p-d-flex p-jc-end">
+                    <button (click)="login()" pButton type="button" label="Login"></button>
+                </div>
+            </p-card>
+
+            <div class="p-d-flex p-text-center p-jc-center p-mt-6">
+                <p>@Dario Frongillo</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,8 @@ import { RestClientService } from '../rest-client.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  username: string = '';
+  password: string = '';
 
   constructor(
     private readonly restClient: RestClientService,
@@ -26,12 +28,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this.auth.login({username: 'ciao', password: 'ciao'}).subscribe((v) => {
-    //   console.log('esempio login', v);
-    //   this.restClient.setAccessToken(v.accessToken);
-    //   this.bookService.findBooks(0, 100).subscribe((books) => {
-    //     console.log('books', books);
-    //   })
-    // });
+    this.auth.login({ username: this.username, password: this.password }).subscribe((accessTokenResponse) => {
+      this.restClient.setAccessToken(accessTokenResponse.accessToken);
+      this.router.navigate(['']);
+      // this.bookService.findBooks(0, 100).subscribe((books) => {
+      //   console.log('books', books);
+      // })
+    });
   }
 }

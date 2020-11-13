@@ -20,6 +20,9 @@
     "@angular/platform-browser": "~10.1.2",
     "@angular/platform-browser-dynamic": "~10.1.2",
     "@angular/router": "~10.1.2",
+    "primeflex": "^2.0.0",
+    "primeicons": "^4.0.0",
+    "primeng": "^10.0.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

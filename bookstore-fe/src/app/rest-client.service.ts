@@ -14,6 +14,7 @@ export class RestClientService {
 
   setAccessToken(accessToken: string) {
     this.accessToken.next(accessToken);
+    localStorage.setItem(this.ACCESS_TOKEN_KEY, accessToken);
   }
 
   initializeAccessToken() {
