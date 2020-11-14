@@ -5,6 +5,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
+import { ListboxModule } from 'primeng/listbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     InputTextModule,
     PasswordModule,
     ButtonModule,
+    ListboxModule,
   ],
   //providers: [{ provide: BASE_PATH, useValue: environment.baseurl }],
   providers: [
