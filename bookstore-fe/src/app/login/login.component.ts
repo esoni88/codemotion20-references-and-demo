@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private readonly restClient: RestClientService,
     private readonly auth: AuthenticationService,
-    private readonly bookService: BookService,
     private readonly router: Router
   ) { }
 
@@ -31,9 +30,6 @@ export class LoginComponent implements OnInit {
     this.auth.login({ username: this.username, password: this.password }).subscribe((accessTokenResponse) => {
       this.restClient.setAccessToken(accessTokenResponse.accessToken);
       this.router.navigate(['']);
-      // this.bookService.findBooks(0, 100).subscribe((books) => {
-      //   console.log('books', books);
-      // })
     });
   }
 }

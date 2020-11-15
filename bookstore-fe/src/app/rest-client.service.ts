@@ -24,6 +24,11 @@ export class RestClientService {
     }
   }
 
+  removeAccessToken() {
+    localStorage.removeItem(this.ACCESS_TOKEN_KEY);
+    this.accessToken.next(null);
+  }
+
   constructor() {
   }
 }

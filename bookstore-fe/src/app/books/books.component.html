@@ -1,36 +1,48 @@
 <div class="p-d-flex p-flex-column">
     <div class="p-d-flex p-jc-around">
-        <div>
-            <h1>Book list</h1>
+        <div class="p-d-flex">
+            <div class="p-mr-2 p-ml-2">
+                <h1 class="p-component">Book list</h1>
+            </div>
+            <div class="p-mt-4">
+                <button class="p-button-outlined p-button-sm" (click)="showAddBookDialog()" type="button" pButton icon="pi pi-plus"></button>      
+            </div>
         </div>
         <div class="p-mt-3">
-            <button pButton type="button" label="+ Add book"></button>
+            <button pButton (click)="logout()" type="button" label="Logout" class="p-button-danger p-button-outlined"></button>
         </div>
     </div>
 
     <div class="p-d-flex p-jc-center">
         <div class="p-inputgroup p-md-7">
             <input [(ngModel)]="searchInput" type="text" pInputText placeholder="Type here...">         
-            <button (click)="searchBook(searchInput)" type="button" pButton icon="pi pi-search"></button>      
+            <button class="p-button-outlined" (click)="searchBook(searchInput)" type="button" pButton icon="pi pi-search"></button>      
         </div>
     </div>
     
     <div class="p-d-flex p-jc-center">
         <p-listbox
             [options]="books"
-            [(ngModel)]="selectedBook"
             optionLabel="name"
             [listStyle]="{'max-height': '250px'}"
             class="p-md-7"
         >
             <ng-template let-book pTemplate="item">
                 <div class="book-item p-d-flex p-jc-between">
-                    <div>{{book.value.title}}</div>
-                    <div>{{book.value.author.publishingHouse}}</div>
-                    <div>{{book.value.author.fullname}}</div>
+                    <div class="p-mt-2">{{book.value.title}}</div>
+                    <div class="p-mt-2">{{book.value.publishingHouse}}</div>
+                    <div class="p-mt-2">{{book.value.author.fullname}}</div>
+                    <button
+                        pButton
+                        (click)="showDetailsDialog(book.value)"
+                        type="button"
+                        label="Show book details"
+                        class="p-button-primary p-button-outlined"
+                    ></button>
                 </div>
             </ng-template>
         </p-listbox>
     </div>
 </div>
 
+<app-book-details-dialog [(visible)]="isDetailsDialogVisible" [book]="selectedBook"></app-book-details-dialog>

@@ -1,0 +1,51 @@
+<p-dialog
+    [draggable]="false"
+    header="Book details"
+    [(visible)]="visible"
+    [style]="{width: '30vw'}"
+    [baseZIndex]="10000"
+    (onHide)="visibleChanged()"
+>
+    <div *ngIf="book">
+        <div class="p-field p-d-flex p-flex-column">
+            <label for="title">Title</label>
+            <input class="p-inputtext-sm" disabled id="title" type="text" pInputText [(ngModel)]="book.title" />
+        </div>
+        <div class="p-field p-d-flex p-flex-column">
+            <label for="totalpages">Total pages</label>
+            <input class="p-inputtext-sm" disabled id="totalpages" type="text" pInputText [(ngModel)]="book.totalPages" />
+        </div>
+        <div class="p-field p-d-flex p-flex-column">
+            <label for="publishinghouse">Publishing house</label>
+            <input class="p-inputtext-sm" disabled id="publishingHouse" type="text" pInputText [(ngModel)]="book.publishingHouse" />
+        </div>
+        <h4>Author info</h4>
+        <div class="p-d-flex">
+            <div class="p-field p-d-flex p-flex-column p-mr-4">
+                <label for="fullname">Full name</label>
+                <input class="p-inputtext-sm" disabled id="fullname" type="text" pInputText [(ngModel)]="book.author.fullname" />
+            </div>
+            <div class="p-field p-d-flex p-flex-column">
+                <label for="country">Country</label>
+                <input class="p-inputtext-sm" disabled id="country" type="text" pInputText [(ngModel)]="book.author.country" />
+            </div>
+        </div>
+        <div class="p-d-flex">
+            <div class="p-field p-d-flex p-flex-column p-mr-4">
+                <label for="birthyear">Birth year</label>
+                <input
+                    class="p-inputtext-sm"
+                    disabled
+                    id="birthYear"
+                    type="text"
+                    pInputText
+                    [ngModel]="book.author.birthYear | date"
+                    (ngModelChange)="book.author.birthYear = $event" />
+            </div>
+            <div class="p-field p-d-flex p-flex-column">
+                <label for="gender">Gender</label>
+                <input class="p-inputtext-sm" disabled id="gender" type="text" pInputText [(ngModel)]="book.author.gender" />
+            </div>
+        </div>
+    </div>
+</p-dialog>

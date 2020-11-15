@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { ListboxModule } from 'primeng/listbox';
+import { DialogModule } from 'primeng/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,18 +17,19 @@ import { ApiModule, BASE_PATH, Configuration } from 'src/backend-connector';
 import { RestClientService } from './rest-client.service';
 import { LoginComponent } from './login/login.component';
 import { BooksComponent } from './books/books.component';
-import { HeaderComponent } from './ui/header/header.component';
 import { FormsModule } from '@angular/forms';
+import { BookDetailsDialogComponent } from './ui/book-details-dialog/book-details-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     BooksComponent,
-    HeaderComponent
+    BookDetailsDialogComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -38,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     PasswordModule,
     ButtonModule,
     ListboxModule,
+    DialogModule,
   ],
   //providers: [{ provide: BASE_PATH, useValue: environment.baseurl }],
   providers: [
