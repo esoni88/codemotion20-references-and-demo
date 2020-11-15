@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Book } from 'src/backend-connector';
 
 @Component({
   selector: 'app-book-details-dialog',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class BookDetailsDialogComponent implements OnInit {
   @Input() visible = false;
   @Output() visibleChange = new EventEmitter();
-  @Input() book = null;
+  @Input() book: Book = null;
 
   constructor() { }
 

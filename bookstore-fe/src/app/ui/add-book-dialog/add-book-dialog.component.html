@@ -1,0 +1,122 @@
+<p-dialog
+    [draggable]="false"
+    header="Book details"
+    [(visible)]="visible"
+    [style]="{width: '30vw'}"
+    [baseZIndex]="10000"
+    (onHide)="visibleChanged()"
+>
+    <div>
+        <form #bookForm='ngForm' (ngSubmit)='onSubmit(bookForm)'>
+            <div class="p-field p-d-flex p-flex-column form-group">
+                <label for="title">Title</label>
+                <input
+                    class="p-inputtext-sm form-control" 
+                    name="title"
+                    id="title"
+                    type="text"
+                    pInputText
+                    [(ngModel)]="book.title"
+                    required
+                />
+            </div>
+            <div class="p-field p-d-flex p-flex-column form-group">
+                <label for="totalpages">Total pages</label>
+                <input
+                    class="p-inputtext-sm form-control"
+                    name="totalPages"
+                    id="totalpages"
+                    type="number"
+                    pInputText
+                    [(ngModel)]="book.totalPages"
+                    required
+                />
+            </div>
+            <div class="p-field p-d-flex p-flex-column form-group">
+                <label for="publishinghouse">Publishing house</label>
+                <input
+                    class="p-inputtext-sm form-control"
+                    name="publishingHouse"
+                    id="publishingHouse"
+                    type="text"
+                    pInputText
+                    [(ngModel)]="book.publishingHouse"
+                    required
+                />
+            </div>
+            <fieldset ngModelGroup="author">
+                <h4>Author info</h4>
+                <div class="p-d-flex">
+                    <div class="p-field p-d-flex p-flex-column p-mr-2 form-group p-sm-6">
+                        <label for="fullname">Full name</label>
+                        <input
+                            class="p-inputtext-sm form-control"
+                            name="fullname"
+                            id="fullname"
+                            type="text"
+                            pInputText
+                            [(ngModel)]="book.author.fullname"
+                            required
+                        />
+                    </div>
+                    <div class="p-field p-d-flex p-flex-column form-group p-sm-6">
+                        <label for="country">Country</label>
+                        <input
+                            class="p-inputtext-sm form-control"
+                            name="country"
+                            id="country"
+                            type="text"
+                            pInputText
+                            [(ngModel)]="book.author.country"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="p-d-flex">
+                    <div class="p-field p-d-flex p-flex-column p-mr-2 form-group p-sm-6">
+                        <label for="birthyear">Birth year</label>
+                        <input
+                            class="p-inputtext-sm form-control"
+                            name="birthYear"
+                            id="birthYear"
+                            type="date"
+                            pInputText
+                            [(ngModel)]="book.author.birthYear"
+                            required
+                        />
+                    </div>
+                    <div class="p-field p-d-flex p-flex-column form-group p-sm-6">
+                        <label for="gender">Gender</label>
+                        <div class="p-d-flex p-jc-between">
+                            <div class="p-field-radiobutton">
+                                <p-radioButton
+                                    name="gender"
+                                    value="MALE"
+                                    [(ngModel)]="book.author.gender"
+                                ></p-radioButton>
+                                <label for="gender1">Male</label>
+                            </div>
+                            <div class="p-field-radiobutton">
+                                <p-radioButton
+                                    name="gender"
+                                    value="FEMALE"
+                                    [(ngModel)]="book.author.gender"
+                                ></p-radioButton>
+                                <label for="gender2">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-d-flex p-jc-end">
+                    <button
+                        pButton
+                        type="submit"
+                        label="Submit"
+                        class="p-button-danger p-button-outlined"
+                        [disabled]='!bookForm.form.valid'
+                    ></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</p-dialog>

@@ -42,9 +42,28 @@
                     [ngModel]="book.author.birthYear | date"
                     (ngModelChange)="book.author.birthYear = $event" />
             </div>
-            <div class="p-field p-d-flex p-flex-column">
+            <div class="p-field p-d-flex p-flex-column form-group p-sm-6">
                 <label for="gender">Gender</label>
-                <input class="p-inputtext-sm" disabled id="gender" type="text" pInputText [(ngModel)]="book.author.gender" />
+                <div class="p-d-flex p-jc-between">
+                    <div class="p-field-radiobutton">
+                        <p-radioButton
+                            name="gender"
+                            value="MALE"
+                            [(ngModel)]="book.author.gender"
+                            disabled
+                        ></p-radioButton>
+                        <label for="gender1">Male</label>
+                    </div>
+                    <div class="p-field-radiobutton">
+                        <p-radioButton
+                            name="gender"
+                            value="FEMALE"
+                            [(ngModel)]="book.author.gender"
+                            disabled
+                        ></p-radioButton>
+                        <label for="gender2">Female</label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

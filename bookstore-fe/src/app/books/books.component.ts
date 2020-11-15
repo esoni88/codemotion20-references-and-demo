@@ -13,7 +13,8 @@ export class BooksComponent implements OnInit {
   books: Book[];
   searchInput: string = '';
   isDetailsDialogVisible: boolean = false;
-  
+  isAddBookDialogVisible: boolean = false;
+
   constructor(
     private readonly restClient: RestClientService,
     private readonly bookService: BookService,
@@ -39,7 +40,7 @@ export class BooksComponent implements OnInit {
   }
 
   showAddBookDialog() {
-    
+    this.isAddBookDialogVisible = true;
   }
 
   showDetailsDialog(book: Book) {
