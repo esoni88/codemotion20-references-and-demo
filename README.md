@@ -1,7 +1,5 @@
 # Contract First API Development with OpenAPI @Codemotion 2020
-#
-#
-#
+
 "Contract-first" e' una metodologia di lavoro per lo sviluppo di API che prevede di definire la specifica delle API prima ancora di svilupparle utilizzando lo standard OpenApi. Dalle specifiche OpenApi e' possibile generare automaticamente documentazione, Client SDK, Stub server, Service Virtualization, Acceptance Test, Configurazione di Api Gateway. In questa sessione ti mostrerò come utilizzare il principio Contract-first e i tool OpenApi generando automaticamente un sacco di codice del boilerplate, alcuni dei tuoi test e consentendo più flussi di lavoro paralleli all'interno del tuo team.
 * [Maggiori Info](https://www.codemotion.com/talks/contract-first-api-development-con-openapi3-16568)  
 # Slide
