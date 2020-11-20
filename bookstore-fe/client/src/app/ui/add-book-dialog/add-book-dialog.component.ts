@@ -12,7 +12,7 @@ export class AddBookDialogComponent implements OnInit {
   @Output() visibleChange = new EventEmitter();
 
   book: Book = {
-    id: 123,
+    id: -1,
     title: '',
     totalPages: 0,
     publishingHouse: '',
@@ -21,7 +21,7 @@ export class AddBookDialogComponent implements OnInit {
       fullname: '',
       country: '',
       birthYear: null,
-      gender: Author.GenderEnum.MALE
+      gender: null
     }
   };
 

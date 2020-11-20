@@ -2,7 +2,7 @@
   "name": "bookstore-fe",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "npx openapi-generator-cli generate -i ../contract/book-store.yaml -g typescript-angular -o src/backend-connector",
+    "postinstall": "npx openapi-generator-cli generate -i ../../contract/book-store.yaml -g typescript-angular -o src/backend-connector",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -31,7 +31,7 @@
     "@angular-devkit/build-angular": "~0.1001.2",
     "@angular/cli": "~10.1.2",
     "@angular/compiler-cli": "~10.1.2",
-    "@openapitools/openapi-generator-cli": "^2.1.4",
+    "@openapitools/openapi-generator-cli": "^2.1.5",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
