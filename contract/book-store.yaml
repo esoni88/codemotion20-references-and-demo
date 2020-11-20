@@ -83,11 +83,13 @@ paths:
             maximum: 100
         - name: genre
           in: query
+          required: false
           description: genre of the book
           schema:
             $ref: '#/components/schemas/BookGenre'   
         - name: search
           in: query
+          required: false
           description: Free Search (example author name, book title)
           schema:
             type: string

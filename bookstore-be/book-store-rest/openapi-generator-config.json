@@ -1,0 +1,13 @@
+{
+  "java8": "true",
+  "dateLibrary": "java8",
+  "useBeanValidation": "true",
+  "useTags": "true",
+  "generateApiTests": "false",
+  "generateApiDocumentation": "false",
+  "supportingFiles": "false",
+  "serializableModel": "true",
+  "basePackage": "it.codemotion.bookstore",
+  "modelPackage": "it.codemotion.bookstore.autogen.model",
+  "apiPackage": "it.codemotion.bookstore.autogen.controller"
+}
