@@ -49,5 +49,5 @@ Un ringraziamento speciale va ad alcuni amici che mi hanno supportato durante la
 
   - Riccardo Nuzzone che ha sviluppato la UI della demo Angular
   - Giorgio Boa e Mich Murabito per le loro review della mia sessione
-
+  - Vincenzo Chianese per chiarimenti e approfondimenti 
 
